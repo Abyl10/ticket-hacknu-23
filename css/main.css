@@ -1,0 +1,251 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+@font-face {
+  font-family: 'PP Neue Machina';
+  src: url("../fonts/NeueMachina-Ultrabold.otf") format('truetype');
+}
+
+html {
+  font-size: 62.5%;
+  overflow: hidden;
+  color: #ffffff;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 50%;
+  }
+}
+
+.ticket-desktop {
+  height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ticket-desktop-container {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url("../img/desktop-ticket.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.ticket-desktop-wrapper {
+  background: #323232;
+  max-width: 60rem;
+  max-height: 40rem;
+  width: 100%;
+  height: 100%;
+  background: rgba(88, 88, 88, 0.2);
+  border: 3px solid #323232;
+  backdrop-filter: blur(20px);
+  --webkit-backdrop-filter: blur(20px);
+  /* Note: backdrop-filter has minimal browser support */
+  border-radius: 6rem;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+@supports (--webkit-backdrop-filter: none)  {
+  .ticket-desktop-wrapper {
+    --webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+  }
+}
+
+@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+  .ticket-desktop-wrapper {
+    --webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+  }
+}
+
+.ticket-desktop-left {
+  padding: 7rem 6rem 5rem 6rem;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 500;
+  line-height: 3.5rem;
+  font-size: 2.7rem;
+}
+
+.header {
+  font-family: 'PP Neue Machina', sans-serif;
+  font-weight: 800;
+  font-size: 6rem;
+  line-height: 100%;
+  margin-bottom: 1.5rem;
+}
+
+.header-span {
+  color: #58E191;
+}
+
+.fullname {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  line-height: 4.5rem;
+}
+
+.ticket-desktop-bottom {
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  margin-top: 6.6rem;
+  gap: 2rem;
+}
+
+.ticket-desktop-bottom-p {
+  display: flex;
+  flex-direction: column;
+  line-height: 2rem;
+}
+
+.ticket-desktop-bottom-p1 {
+  align-self: end;
+  line-height: 2rem;
+}
+
+.ticket-desktop-right {
+  display: flex;
+  align-items: center;
+  border-left: 3px dashed #323232;
+}
+
+.vertical {
+  padding: 3rem;
+  writing-mode: vertical-lr;
+  text-orientation: sideways;
+  transform: scale(-1, -1);
+  font-weight: 500;
+  font-size: 4rem;
+  line-height: 4.5rem;
+}
+
+
+
+@media screen and (max-width: 550px) {
+  .ticket-desktop {
+    display: none;
+  }
+}
+
+.ticket-mobile {
+  display: none;
+}
+
+@media screen and (max-width: 550px) {
+  html {
+    font-size: 62.5%;
+  }
+  .ticket-mobile {
+    display: block;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .ticket-mobile-container {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url("../img/mobile-ticket.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+  }
+
+  .ticket-mobile-wrapper {
+    background: #323232;
+    width: 55%;
+    height: 33rem;
+    background: rgba(88, 88, 88, 0.2);
+    border: 3px solid #323232;
+    backdrop-filter: blur(20px);
+    --webkit-backdrop-filter: blur(20px);
+    /* Note: backdrop-filter has minimal browser support */
+    border-radius: 3rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem;
+  }
+
+  .header {
+    font-size: 3rem;
+  }
+
+  .fullname {
+    font-size: 1.6rem;
+    line-height: 1.8rem;
+    text-align: left;
+  }
+
+  .teamname {
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+  }
+
+  .logo-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .mobile-logo {
+    width: 6rem;
+    height: 4.2rem;
+  }
+
+  .ticket-mobile-bottom-p {
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .ticket-mobile-bottom-p1 {
+    font-size: 1.4rem;
+    line-height: 1.1rem;
+    text-align: end;
+  }
+
+  .horizontal {
+    font-size: 2.5rem;
+    line-height: 2.9rem;
+    border-top: 3px dashed #323232;
+    padding-top: 0.8rem;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.u-mb-small-very {
+  margin-bottom: 0.5rem;
+}
+
+.u-mb-small {
+  margin-bottom: 1.5rem;
+}
+
+.u-mb-large {
+  margin-bottom: 4.3rem;
+}
